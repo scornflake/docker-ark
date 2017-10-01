@@ -1,7 +1,14 @@
 # docker-ark 
 This is docker container running an **ARK Survival Evolved** server (http://www.playark.com/).
 
-Tested on Linux (Ubuntu 14.04)  and Synology DSM 5.2-5644
+With this fork I've changed:
+- Some default ports
+- Using the master version of ark server tools (rather than being pinned to 1.5)
+
+This is the comamnd link I'm using when creating the container:
+- docker run -d --restart=always -p 7777:7777/udp -p 7778:7778 -p 7778:7778/udp -p 27015:27015 -p 27015:27015/udp -p 32330:32330 -v /volume1/docker/ark-better:/ark -e SESSIONNAME=TheOthers2 -e SERVERMAP=Ragnarok -e SERVERPASSWORD=<pwdhere> -e ADMINPASSWORD=<muppet> --name ark-container scornflake/ark-better
+
+Tested on Linux (Ubuntu 14.04) and Synology DSM 6.1
 ## Features
 
 - Easy install
